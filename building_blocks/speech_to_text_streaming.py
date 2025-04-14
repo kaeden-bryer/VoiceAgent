@@ -1,5 +1,6 @@
 import asyncio
 from dotenv import load_dotenv
+import os
 
 from deepgram import (
     DeepgramClient,
@@ -10,6 +11,8 @@ from deepgram import (
 )
 
 load_dotenv()
+DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
+print(f"API Key: {os.getenv("DEEPGRAM_API_KEY")}")
 
 class TranscriptCollector:
     def __init__(self):
